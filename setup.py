@@ -63,7 +63,7 @@ with open("README.md", encoding="utf-8") as f:
 
 
 # recursively find all files that match the globs and return tuples with their directory and a list of relative paths
-def find_data_files(path: str, globs: list[str]) -> Tuple[str, List[str]]:
+def find_data_files(path: str, globs: List[str]) -> Tuple[str, List[str]]:
     data_files_path = os.path.join("MethodicConfigurator", path)
     data_files_path_base = os.path.join(os.path.dirname(__file__), "MethodicConfigurator")
     ret = []
@@ -147,8 +147,9 @@ setup(
     keywords=["ArduPilot", "Configuration", "SCM", "Methodic", "ArduCopter", "ArduPlane", "ArduRover", "ArduSub"],
     # this is used by sdist
     package_data={
-        "": ["*.param", "*.jpg", "*.json", "*.xml", "*.mo"],
+        "MethodicConfigurator": ["*.param", "*.jpg", "*.json", "*.xml", "*.mo", "*.png"],
     },
+    exclude_package_data={"MethodicConfigurator": ["test.xml"]},
     # this is used by bdist
     data_files=[
         *find_data_files("vehicle_templates", ["*.param", "*.jpg", "*.json", "*.xml"]),
