@@ -145,10 +145,9 @@ setup(
     license="GPLv3",
     python_requires=">=3.6",
     keywords=["ArduPilot", "Configuration", "SCM", "Methodic", "ArduCopter", "ArduPlane", "ArduRover", "ArduSub"],
-    # package_dir={"": "MethodicConfigurator"},
     # this is used by sdist
     package_data={
-        "MethodicConfigurator": ["*.param", "*.jpg", "*.json", "*.xml", "*.mo"],
+        "": ["*.param", "*.jpg", "*.json", "*.xml", "*.mo"],
     },
     # this is used by bdist
     data_files=[
