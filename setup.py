@@ -16,8 +16,6 @@ from typing import List, Tuple
 
 from setuptools import setup
 
-from MethodicConfigurator.version import VERSION
-
 extra_scripts = [
     "MethodicConfigurator/annotate_params.py",
     "MethodicConfigurator/extract_param_defaults.py",
@@ -69,10 +67,9 @@ def find_data_files(path: str, globs: List[str]) -> Tuple[str, List[str]]:
 
 
 setup(
-    version=VERSION,
     packages=["MethodicConfigurator"],
-    long_description=long_description,
-    long_description_content_type="text/markdown",
+    # long_description=long_description,
+    # long_description_content_type="text/markdown",
     # this is used by bdist
     data_files=[
         *find_data_files("vehicle_templates", ["*.param", "*.jpg", "*.json", "*.xml"]),
