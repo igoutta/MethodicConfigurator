@@ -19,6 +19,7 @@ from logging import warning as logging_warning
 from platform import system as platform_system
 from tkinter import BooleanVar, messagebox, ttk
 from tkinter import font as tkFont
+from tkinter.font import _FontDict
 from typing import Optional
 
 from PIL import Image, ImageTk
@@ -320,7 +321,7 @@ class RichText(tk.Text):  # pylint: disable=too-many-ancestors
         self.tag_configure("h1", font=h1_font, spacing3=default_size)
 
 
-def get_widget_font(widget: tk.Widget) -> tkFont._FontDict | None:
+def get_widget_font(widget: tk.Widget) -> _FontDict | None:
     style = ttk.Style()
     widget_style = widget.cget("style")  # Get the style used by the widget
     font_name = style.lookup(widget_style, "font")
